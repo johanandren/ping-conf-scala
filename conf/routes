@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET        /kittens/:id               controllers.Application.kittenProfile(id: Long)
+
+GET        /auction/:name/:bid        controllers.CatAuction.placeCatnipBid(name: String, bid: Int)
+GET        /auction                   controllers.CatAuction.highestBidForCatnip()
+
+GET        /stream                    controllers.KittenStream.streamKittenEvents()
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file              controllers.Assets.at(path="/public", file)
